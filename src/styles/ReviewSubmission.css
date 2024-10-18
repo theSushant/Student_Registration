@@ -23,7 +23,6 @@
 .form-heading {
   text-align: center;
   font-size: 2.8rem;
-  color: #43A047;
   font-weight: 700;
   margin-bottom: 25px;
   letter-spacing: 1px;
@@ -53,9 +52,9 @@
 .section-title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #2E7D32;
+  color: #25529E;
   margin-bottom: 10px;
-  border-bottom: 1px solid #43A047; /* Thinner bottom line */
+  border-bottom: 1px solid #25529E; /* Thinner bottom line */
   padding-bottom: 5px;
 }
 
@@ -170,7 +169,7 @@
 }
 
 .submit-button {
-  background-color: #43A047; /* Green */
+  background-color: #25529E; /* Green */
   color: white;
 }
 
