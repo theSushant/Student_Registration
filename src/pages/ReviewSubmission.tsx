@@ -24,10 +24,16 @@ const ReviewSubmission: React.FC = () => {
         <div className="info-card">
           <h3 className="section-title">Personal Information</h3>
           <div className="info-details">
+            <p><strong>Title:</strong> {formData.personalInfo?.title || 'N/A'}</p>
             <p><strong>First Name:</strong> {formData.personalInfo?.firstName || 'N/A'}</p>
+            <p><strong>Middle Name:</strong> {formData.personalInfo?.middleName || 'N/A'}</p>
             <p><strong>Last Name:</strong> {formData.personalInfo?.lastName || 'N/A'}</p>
             <p><strong>Mobile:</strong> {formData.personalInfo?.mobile || 'N/A'}</p>
+            <p><strong>Emergency Contact:</strong> {formData.personalInfo?.emergencyContact || 'N/A'}</p>
             <p><strong>Email:</strong> {formData.personalInfo?.email || 'N/A'}</p>
+            <p><strong>Marital Status:</strong> {formData.personalInfo?.maritalStatus || 'N/A'}</p>
+            <p><strong>Gender:</strong> {formData.personalInfo?.gender || 'N/A'}</p>
+            <p><strong>Date Of Birth:</strong> {formData.personalInfo?.dateOfBirth   || 'N/A'}</p>
           </div>
         </div>
 
@@ -35,10 +41,12 @@ const ReviewSubmission: React.FC = () => {
         <div className="info-card">
           <h3 className="section-title">Address Information</h3>
           <div className="info-details">
-            <p><strong>Country:</strong> {formData.addressInfo?.country || 'N/A'}</p>
-            <p><strong>State:</strong> {formData.addressInfo?.state || 'N/A'}</p>
-            <p><strong>City:</strong> {formData.addressInfo?.city || 'N/A'}</p>
+            <p><strong>Country:</strong> {formData.addressInfo?.nativeCountry || 'N/A'}</p>
+            <p><strong>State:</strong> {formData.addressInfo?.nativeState || 'N/A'}</p>
+            <p><strong>City:</strong> {formData.addressInfo?.nativeCity || 'N/A'}</p>
             <p><strong>Postal Code:</strong> {formData.addressInfo?.postalCode || 'N/A'}</p>
+            <p><strong>Passport Number:</strong> {formData.addressInfo?.passportNumber || 'N/A'}</p>
+            <p><strong>Passport Expiry:</strong> {formData.addressInfo?.passportExpiry || 'N/A'}</p>
           </div>
         </div>
 
@@ -49,6 +57,7 @@ const ReviewSubmission: React.FC = () => {
             <p><strong>Interested Country:</strong> {formData.academicInfo?.interestedCountry || 'N/A'}</p>
             <p><strong>English Test:</strong> {formData.academicInfo?.englishTest || 'N/A'}</p>
             <p><strong>Test Score:</strong> {formData.academicInfo?.testScore || 'N/A'}</p>
+            <p><strong>Education Board:</strong> {formData.academicInfo?.educationBoard || 'N/A'}</p>
           </div>
         </div>
 

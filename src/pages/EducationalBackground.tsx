@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -24,7 +24,16 @@ const validationSchema = Yup.object({
 
 const EducationalBackground: React.FC = () => {
   const navigate = useNavigate(); // Navigation hook
-  const { setFormData } = useForm(); // Use FormContext to store data
+  const { formData, setFormData } = useForm(); // Use FormContext to store and retrieve data
+
+  // Initialize qualifications from context if present
+  const initialQualifications = formData.educationalBackground || [{
+    qualification: '',
+    institution: '',
+    percentage: '',
+    passingYear: '',
+    country: ''
+  }];
 
   return (
     <div className="educational-background-container">
@@ -36,13 +45,7 @@ const EducationalBackground: React.FC = () => {
 
       <Formik
         initialValues={{
-          qualifications: [{
-            qualification: '',
-            institution: '',
-            percentage: '',
-            passingYear: '',
-            country: ''
-          }]
+          qualifications: initialQualifications
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {

@@ -3,17 +3,25 @@ import React, { createContext, useState, useContext, ReactNode } from 'react';
 // Define the shape of the form data
 interface FormData {
   personalInfo?: {
+    title: string,
     firstName: string;
+    middleName: string,
     lastName: string;
     email: string;
     mobile: string;
+    emergencyContact: string,
+    maritalStatus: string,
+    gender: string,
+    dateOfBirth: string,
     // Add additional fields if necessary
   };
   addressInfo?: {
-    country: string;
-    state: string;
-    city: string;
+    nativeCountry: string;
+    nativeState: string;
+    nativeCity: string;
     postalCode: string;
+    passportNumber: string,
+    passportExpiry: string,
   };
   academicInfo?: {
     interestedCountry: string;

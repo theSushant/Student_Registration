@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -20,7 +20,13 @@ interface FormValues {
 
 const BackgroundInfo: React.FC = () => {
   const navigate = useNavigate(); // Navigation hook
-  const { setFormData } = useForm(); // Use FormContext to store data
+  const { formData, setFormData } = useForm(); // Use FormContext to store and retrieve data
+
+  // Initialize form values from context if present
+  const initialValues = {
+    visaRejection: formData.backgroundInfo?.visaRejection || '',
+    educationGap: formData.backgroundInfo?.educationGap || '',
+  };
 
   return (
     <div className="background-info-container">
@@ -31,10 +37,7 @@ const BackgroundInfo: React.FC = () => {
       </p>
 
       <Formik
-        initialValues={{
-          visaRejection: '',
-          educationGap: '',
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values: FormValues) => {
           // Store background information in the context
@@ -84,7 +87,7 @@ const BackgroundInfo: React.FC = () => {
 
             {/* Gap in Education */}
             <div className="form-field">
-              <div className='row_val'>
+              <div className="row_val">
                 <label htmlFor="educationGap"><span className="required">*</span>Gap in Education</label>
                 <div className="tooltip-container">
                   <i className="tooltip-icon" aria-label="Education gap info">?</i>

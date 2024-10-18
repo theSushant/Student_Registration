@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
 
 const PersonalInfo: React.FC = () => {
   const navigate = useNavigate(); // Navigation hook
-  const { setFormData } = useForm(); // Access setFormData from the context to store the data
+  const { formData, setFormData } = useForm(); // Access form data and setFormData from the context
 
   const handleSubmit = (values: any) => {
     // Store the submitted data in the context
@@ -36,6 +36,10 @@ const PersonalInfo: React.FC = () => {
     navigate('/address-info');
   };
 
+  useEffect(() => {
+    // Make sure to set initialValues to stored form data if available
+  }, [formData]);
+
   return (
     <div className="personal-info-container">
       <StepNavigator currentStep={1} /> {/* Step Navigator Component */}
@@ -46,16 +50,16 @@ const PersonalInfo: React.FC = () => {
 
       <Formik
         initialValues={{
-          title: '',
-          firstName: '',
-          middleName: '',
-          lastName: '',
-          mobile: '',
-          emergencyContact: '',
-          email: '',
-          maritalStatus: '',
-          gender: '',
-          dateOfBirth: null,
+          title: formData.personalInfo?.title || '',
+          firstName: formData.personalInfo?.firstName || '',
+          middleName: formData.personalInfo?.middleName || '',
+          lastName: formData.personalInfo?.lastName || '',
+          mobile: formData.personalInfo?.mobile || '',
+          emergencyContact: formData.personalInfo?.emergencyContact || '',
+          email: formData.personalInfo?.email || '',
+          maritalStatus: formData.personalInfo?.maritalStatus || '',
+          gender: formData.personalInfo?.gender || '',
+          dateOfBirth: formData.personalInfo?.dateOfBirth || null,
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit} // Save form data to context and navigate to the next page

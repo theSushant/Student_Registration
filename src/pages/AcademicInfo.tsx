@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -16,7 +16,7 @@ const validationSchema = Yup.object({
 
 const AcademicInfo: React.FC = () => {
   const navigate = useNavigate(); // Navigation hook
-  const { setFormData } = useForm(); // Use FormContext to store data
+  const { formData, setFormData } = useForm(); // Use FormContext to store data
 
   const [showTestScore, setShowTestScore] = useState(false);
   const [showEducationBoard, setShowEducationBoard] = useState(false);
@@ -56,10 +56,10 @@ const AcademicInfo: React.FC = () => {
 
       <Formik
         initialValues={{
-          interestedCountry: '',
-          englishTest: '',
-          testScore: '',
-          educationBoard: '',
+          interestedCountry: formData.academicInfo?.interestedCountry || '',
+          englishTest: formData.academicInfo?.englishTest || '',
+          testScore: formData.academicInfo?.testScore || '',
+          educationBoard: formData.academicInfo?.educationBoard || '',
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit} // Save form data to context and navigate to next step

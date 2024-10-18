@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -18,29 +18,26 @@ const validationSchema = Yup.object({
 
 const AddressInfo: React.FC = () => {
   const navigate = useNavigate();
-  const { setFormData } = useForm(); // Use FormContext to store data
-
+  const { formData, setFormData } = useForm(); // Access formData from context
   const [isAddressOpen, setIsAddressOpen] = useState(true);
   const [isPassportOpen, setIsPassportOpen] = useState(false);
 
+  // Toggle accordion sections
   const toggleAddressSection = () => setIsAddressOpen(!isAddressOpen);
   const togglePassportSection = () => setIsPassportOpen(!isPassportOpen);
 
   const handleSubmit = (values: any) => {
-    // Store the submitted address data
+    // Store the submitted address and passport data
     setFormData((prevData) => ({
       ...prevData,
-      addressInfo: {
-        country: values.nativeCountry,
-        state: values.nativeState,
-        city: values.nativeCity,
-        postalCode: values.postalCode,
-        passportNumber: values.passportNumber,
-        passportExpiry: values.passportExpiry,
-      },
+      addressInfo: values, // Update the address and passport information
     }));
     navigate('/academic-info'); // Navigate to the next step
   };
+
+  useEffect(() => {
+    // Any side-effects or initial setup can go here if needed
+  }, [formData]);
 
   return (
     <div className="address-info-container">
@@ -50,12 +47,12 @@ const AddressInfo: React.FC = () => {
 
       <Formik
         initialValues={{
-          nativeCountry: '',
-          nativeState: '',
-          nativeCity: '',
-          postalCode: '',
-          passportNumber: '',
-          passportExpiry: null,
+          nativeCountry: formData.addressInfo?.nativeCountry || '',
+          nativeState: formData.addressInfo?.nativeState || '',
+          nativeCity: formData.addressInfo?.nativeCity || '',
+          postalCode: formData.addressInfo?.postalCode || '',
+          passportNumber: formData.addressInfo?.passportNumber || '',
+          passportExpiry: formData.addressInfo?.passportExpiry || null,
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit} // Save form data to context and navigate to next step
