@@ -80,10 +80,68 @@
   margin-right: 10px; /* Add space between label and value */
 }
 
-/* Educational section specific styling */
-.education-info p {
-  margin: 4px 0;
-  font-size: 0.95rem;
+/* Educational Background Section Styling */
+.education-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between each qualification */
+}
+
+.education-info {
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.qualification-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.qualification-title strong {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.separator {
+  width: 60%; /* Controls the length of the line */
+  height: 1px;
+  background-color: #ccc;
+  margin: 5px auto;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #4b4b4b;
+}
+
+.education-item strong {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* No qualifications added text */
+.education-info-container p {
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+/* Background Information Section Styling */
+.background-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.background-info-item {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Button container */

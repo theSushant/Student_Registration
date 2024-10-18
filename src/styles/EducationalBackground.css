@@ -13,7 +13,7 @@
   .form-heading {
     text-align: center;
     font-size: 2.5rem;
-    color: #4CAF50;
+    color: #25529E;
     margin-bottom: 15px;
   }
   
@@ -41,7 +41,7 @@
   
   /* Add/Remove buttons */
   .add-button, .remove-button {
-    background-color: #4CAF50;
+    background-color: #25529E;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -87,7 +87,7 @@
   }
   
   .next-button {
-    background-color: #4CAF50;
+    background-color: #25529E;
     color: white;
   }
   

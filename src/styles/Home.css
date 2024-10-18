@@ -22,7 +22,7 @@
   
   /* Button styling */
   .start-button {
-    background-color: #4CAF50;
+    background-color: #25529E;
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -70,7 +70,7 @@
   
   /* Styling for the step number to match the button color */
   .home-step strong {
-    color: #4CAF50; /* Match step number color with the button */
+    color: #25529E; /* Match step number color with the button */
     margin-right: 10px; /* Add margin for spacing instead of min-width */
     font-weight: bold;
   }

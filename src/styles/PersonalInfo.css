@@ -15,7 +15,7 @@
   font-size: 2.5rem; /* Main heading size */
   font-weight: bold; /* Bold text */
   margin-bottom: 15px; /* Space below the heading */
-  color: #4CAF50; /* Theme color */
+  color: #25529E; /* Theme color */
 }
 
 /* Description under the heading */
@@ -48,12 +48,12 @@
 /* Focus state for inputs and selects */
 .form-field input:focus,
 .form-field select:focus {
-  border-color: #4CAF50; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+  border-color: #25529E; /* Change border color on focus */
+  box-shadow: 0 0 5px rgb(37,82,158, 0.5); /* Green shadow on focus */
 }
 
 .form-field label{
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 /*  Styling for required field indicator */
@@ -85,7 +85,7 @@
 }
 
 .next-button {
-  background-color: #4CAF50; /* Green for Next button */
+  background-color: #25529E; /* Green for Next button */
   color: white; /* White text */
 }
 

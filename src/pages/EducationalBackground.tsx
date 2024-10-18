@@ -73,7 +73,7 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Qualification */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.qualification`}>Qualification<span className="required">*</span></label>
+                        <label htmlFor={`qualifications.${index}.qualification`}><span className="required">*</span>Qualification</label>
                         <Field
                           name={`qualifications.${index}.qualification`}
                           type="text"
@@ -84,7 +84,7 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Institution/Board/University */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.institution`}>Institution/Board/University<span className="required">*</span></label>
+                        <label htmlFor={`qualifications.${index}.institution`}><span className="required">*</span>Institution/Board/University</label>
                         <Field
                           name={`qualifications.${index}.institution`}
                           type="text"
@@ -95,7 +95,7 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Percentage */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.percentage`}>Percentage<span className="required">*</span></label>
+                        <label htmlFor={`qualifications.${index}.percentage`}><span className="required">*</span>Percentage</label>
                         <Field
                           name={`qualifications.${index}.percentage`}
                           type="number"
@@ -106,7 +106,7 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Passing Year */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.passingYear`}>Passing Year<span className="required">*</span></label>
+                        <label htmlFor={`qualifications.${index}.passingYear`}><span className="required">*</span>Passing Year</label>
                         <Field
                           name={`qualifications.${index}.passingYear`}
                           type="text"
@@ -117,7 +117,7 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Country */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.country`}>Country<span className="required">*</span></label>
+                        <label htmlFor={`qualifications.${index}.country`}><span className="required">*</span>Country</label>
                         <Field
                           name={`qualifications.${index}.country`}
                           type="text"

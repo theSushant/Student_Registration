@@ -56,20 +56,37 @@ const ReviewSubmission: React.FC = () => {
         <div className="info-card">
           <h3 className="section-title">Educational Background</h3>
           {formData.educationalBackground?.length ? (
-            formData.educationalBackground.map((education, index) => (
-              <div key={index} className="education-info">
-                <p><strong>Qualification {index + 1}:</strong></p>
-                <p>Degree: {education.qualification || 'N/A'}</p>
-                <p>Institution: {education.institution || 'N/A'}</p>
-                <p>Percentage: {education.percentage !== undefined ? education.percentage : 'N/A'}</p>
-                <p>Passing Year: {education.passingYear || 'N/A'}</p>
-                <p>Country: {education.country || 'N/A'}</p>
-              </div>
-            ))
+            <div className="education-info-container">
+              {formData.educationalBackground.map((education, index) => (
+                <div key={index} className="education-info">
+                  <div className="qualification-title">
+                    <strong>Qualification {index + 1}</strong>
+                    <div className="separator"></div>
+                  </div>
+                  <div className="education-item">
+                    <strong>Degree:</strong> {education.qualification || 'N/A'}
+                  </div>
+                  <div className="education-item">
+                    <strong>Institution:</strong> {education.institution || 'N/A'}
+                  </div>
+                  <div className="education-item">
+                    <strong>Percentage:</strong> {education.percentage !== undefined ? education.percentage : 'N/A'}
+                  </div>
+                  <div className="education-item">
+                    <strong>Passing Year:</strong> {education.passingYear || 'N/A'}
+                  </div>
+                  <div className="education-item">
+                    <strong>Country:</strong> {education.country || 'N/A'}
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <p>No qualifications added.</p>
           )}
         </div>
+
+
 
         {/* Background Information Section */}
         <div className="info-card">

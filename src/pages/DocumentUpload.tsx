@@ -95,7 +95,7 @@ const DocumentUpload: React.FC = () => {
                   {/* Upload fields for each document */}
                   {['10th Marksheet', '12th Marksheet', 'Passport', 'English Proficiency Test Certificate', 'SOP', 'CV', 'Experience', 'Bachelor’s Degree'].map((doc, index) => (
                     <div className="upload-field" key={index}>
-                      <label>{doc}</label>
+                      <label><strong>{doc}</strong></label>
                       <div className="drag-and-drop-area"
                         onDrop={(e) => {
                           e.preventDefault();

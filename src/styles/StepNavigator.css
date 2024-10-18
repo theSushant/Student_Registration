@@ -1,4 +1,3 @@
-/* Step Navigator Container */
 .step-navigator {
   display: flex;
   justify-content: center;
@@ -6,14 +5,12 @@
   margin: 20px 0;
 }
 
-/* Individual Step Container */
 .step {
-  position: relative; /* Required for tooltip positioning */
   display: flex;
   align-items: center;
+  position: relative; /* Ensure positioning context for the tooltip */
 }
 
-/* Step Circle */
 .circle {
   width: 40px;
   height: 40px;
@@ -27,48 +24,52 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  position: relative;
+  position: relative; /* Position for the tooltip */
+  user-select: none; /* Prevent text selection */
 }
 
-/* Active Step Styling */
 .circle.active {
-  background-color: #4CAF50; /* Active step color */
+  background-color: #25529E; /* Active step color */
   animation: pulse 0.5s infinite; /* Pulse animation */
 }
 
-/* Line between Steps */
 .line {
   width: 50px;
   height: 2px;
   background-color: #ccc;
+  transition: visibility 0.3s ease; /* Smooth transition */
 }
 
 /* Custom Tooltip Styling */
-.circle:hover::after {
-  content: attr(data-label); /* Use the label from the data attribute */
-  position: absolute;
-  bottom: -35px; /* Position the tooltip below the circle */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
+.tooltip {
+  visibility: hidden; /* Hide by default */
+  width: max-content;
+  background-color: #25529E; /* Tooltip background color */
   color: #fff;
-  padding: 5px 10px;
+  text-align: center;
   border-radius: 5px;
-  font-size: 0.85rem;
-  white-space: nowrap; /* Prevent text from wrapping */
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  padding: 5px;
+  position: absolute;
+  top: 45px; /* Position tooltip BELOW the circle */
+  left: 50%;
+  transform: translateX(-50%); /* Center tooltip horizontally */
+  opacity: 0; /* Fully transparent initially */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  z-index: 1; /* Ensure tooltip stays above the circle */
 }
 
-/* Show Tooltip on Hover */
-.circle:hover::after {
-  opacity: 1;
+/* Show tooltip on hover */
+.circle:hover .tooltip {
   visibility: visible;
+  opacity: 1;
 }
 
-/* Pulse Animation for Active Step */
+/* Hide the line when the circle is hovered */
+.circle:hover + .line {
+  visibility: hidden;
+}
+
+/* Pulse animation for active circle */
 @keyframes pulse {
   0% {
     transform: scale(1);

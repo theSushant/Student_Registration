@@ -69,7 +69,7 @@ const AcademicInfo: React.FC = () => {
 
             {/* Interested Country */}
             <div className="form-field">
-              <label htmlFor="interestedCountry">Interested Country<span className="required">*</span></label>
+              <label htmlFor="interestedCountry"><span className="required">*</span>Interested Country</label>
               <Field as="select" name="interestedCountry" className="form-select" required>
                 <option value="" label="Select country" />
                 <option value="USA" label="USA" />
@@ -82,7 +82,7 @@ const AcademicInfo: React.FC = () => {
 
             {/* English Proficiency Test */}
             <div className="form-field">
-              <label htmlFor="englishTest">English Proficiency Test<span className="required">*</span></label>
+              <label htmlFor="englishTest"><span className="required">*</span>English Proficiency Test</label>
               <Field
                 as="select"
                 name="englishTest"
@@ -105,7 +105,7 @@ const AcademicInfo: React.FC = () => {
             {/* Conditional Test Score Field */}
             {showTestScore && (
               <div className="form-field">
-                <label htmlFor="testScore">Test Score<span className="required">*</span></label>
+                <label htmlFor="testScore"><span className="required">*</span>Test Score</label>
                 <Field
                   type="text"
                   name="testScore"
@@ -118,7 +118,7 @@ const AcademicInfo: React.FC = () => {
             {/* Conditional Education Board Field */}
             {showEducationBoard && (
               <div className="form-field">
-                <label htmlFor="educationBoard">Education Board<span className="required">*</span></label>
+                <label htmlFor="educationBoard"><span className="required">*</span>Education Board</label>
                 <Field
                   type="text"
                   name="educationBoard"

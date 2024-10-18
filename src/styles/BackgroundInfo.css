@@ -13,7 +13,7 @@
 .form-heading {
   text-align: center;
   font-size: 2.5rem;
-  color: #4CAF50;
+  color: #25529E;
   margin-bottom: 20px;
 }
 
@@ -87,26 +87,27 @@
 .tooltip-container {
   position: relative;
   display: inline-block;
-  float: right;
 }
 
 .tooltip-icon {
-  background-color: #4CAF50;
+  background-color: #25529E;
   color: white;
-  padding: 8px;
-  border-radius: 50%;
-  font-size: 14px;
+  padding: 1px;
+  border-radius: 50%; /* Make it circular */
+  font-size: 10px; /* Adjust font size for better centering */
   cursor: pointer;
-  margin-left: 10px;
   text-align: center;
-  width: 24px;
-  height: 24px;
+  width: 15px;  /* Set width */
+  height: 15px; /* Set height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tooltip-text {
   visibility: hidden;
-  width: 240px;
-  background-color: #333;
+  width: 200px;
+  background-color: #25529E;
   color: white;
   text-align: center;
   padding: 8px;
@@ -139,7 +140,7 @@
 }
 
 .form-select:focus {
-  border-color: #4CAF50;
+  border-color: #25529E;
 }
 
 /* Button container */
@@ -166,7 +167,7 @@
 }
 
 .next-button {
-  background-color: #4CAF50;
+  background-color: #25529E;
   color: white;
 }
 
@@ -187,4 +188,10 @@
   color: red;
   margin-top: 8px;
   font-size: 0.9rem;
+}
+
+.row_val {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

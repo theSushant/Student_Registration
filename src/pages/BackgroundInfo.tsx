@@ -54,27 +54,27 @@ const BackgroundInfo: React.FC = () => {
           <Form className="form-container">
             {/* Visa Rejection Status */}
             <div className="form-field">
-              <label>Visa Rejection Status <span className="required">*</span></label>
+              <label><span className="required">*</span>Visa Rejection Status</label>
               <div className="radio-group">
                 <label className={`radio-pill ${values.visaRejection === 'Yes' ? 'selected' : ''}`}>
-                  <input 
-                    type="radio" 
-                    name="visaRejection" 
-                    value="Yes" 
-                    className="radio-input bounce-animation" 
-                    onChange={handleChange} 
-                    checked={values.visaRejection === 'Yes'} 
+                  <input
+                    type="radio"
+                    name="visaRejection"
+                    value="Yes"
+                    className="radio-input bounce-animation"
+                    onChange={handleChange}
+                    checked={values.visaRejection === 'Yes'}
                   />
                   <span className="radio-label">Yes</span>
                 </label>
                 <label className={`radio-pill ${values.visaRejection === 'No' ? 'selected' : ''}`}>
-                  <input 
-                    type="radio" 
-                    name="visaRejection" 
-                    value="No" 
-                    className="radio-input bounce-animation" 
-                    onChange={handleChange} 
-                    checked={values.visaRejection === 'No'} 
+                  <input
+                    type="radio"
+                    name="visaRejection"
+                    value="No"
+                    className="radio-input bounce-animation"
+                    onChange={handleChange}
+                    checked={values.visaRejection === 'No'}
                   />
                   <span className="radio-label">No</span>
                 </label>
@@ -84,9 +84,14 @@ const BackgroundInfo: React.FC = () => {
 
             {/* Gap in Education */}
             <div className="form-field">
-              <label htmlFor="educationGap">
-                Gap in Education <span className="required">*</span>
-              </label>
+              <div className='row_val'>
+                <label htmlFor="educationGap"><span className="required">*</span>Gap in Education</label>
+                <div className="tooltip-container">
+                  <i className="tooltip-icon" aria-label="Education gap info">?</i>
+                  <span className="tooltip-text">Select the gap period if applicable.</span>
+                </div>
+              </div>
+
               <Field
                 as="select"
                 name="educationGap"
@@ -101,17 +106,13 @@ const BackgroundInfo: React.FC = () => {
                 <option value="More than 2 years" label="More than 2 years" />
               </Field>
               <ErrorMessage name="educationGap" component="div" className="error-message" />
-              <div className="tooltip-container">
-                <i className="tooltip-icon" aria-label="Education gap info">?</i>
-                <span className="tooltip-text">Select the gap period if applicable.</span>
-              </div>
             </div>
 
             {/* Navigation Buttons */}
             <div className="button-container">
-              <button 
-                type="button" 
-                className="nav-button prev-button" 
+              <button
+                type="button"
+                className="nav-button prev-button"
                 onClick={() => navigate('/educational-background')}
               >
                 Previous

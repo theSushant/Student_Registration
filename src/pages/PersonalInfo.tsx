@@ -17,7 +17,7 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
   maritalStatus: Yup.string().required('Marital status is required'),
   gender: Yup.string().required('Gender is required'),
-  dateOfBirth: Yup.date().required('Date of Birth is required').nullable(),
+  dateOfBirth: Yup.date().required('Date of Birth is required'),
 });
 
 const PersonalInfo: React.FC = () => {
