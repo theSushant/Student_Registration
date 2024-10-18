@@ -37,7 +37,7 @@
   width: 50px;
   height: 2px;
   background-color: #ccc;
-  transition: visibility 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 /* Custom Tooltip Styling */
@@ -64,9 +64,9 @@
   opacity: 1;
 }
 
-/* Hide the line when the circle is hovered */
+/* Ensure the line remains visible and unaffected */
 .circle:hover + .line {
-  visibility: hidden;
+  visibility: visible; /* Line stays visible */
 }
 
 /* Pulse animation for active circle */
