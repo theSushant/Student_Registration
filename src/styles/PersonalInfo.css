@@ -32,7 +32,6 @@
   grid-template-columns: 1fr; /* Single column */
   grid-row-gap: 20px; /* Space between form fields */
   text-align: left;
-  margin-left: 50px;
 }
 
 /* Styling for the input fields and selects */

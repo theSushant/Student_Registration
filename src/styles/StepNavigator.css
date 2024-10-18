@@ -1,50 +1,82 @@
+/* Step Navigator Container */
 .step-navigator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Individual Step Container */
+.step {
+  position: relative; /* Required for tooltip positioning */
+  display: flex;
+  align-items: center;
+}
+
+/* Step Circle */
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Active Step Styling */
+.circle.active {
+  background-color: #4CAF50; /* Active step color */
+  animation: pulse 0.5s infinite; /* Pulse animation */
+}
+
+/* Line between Steps */
+.line {
+  width: 50px;
+  height: 2px;
+  background-color: #ccc;
+}
+
+/* Custom Tooltip Styling */
+.circle:hover::after {
+  content: attr(data-label); /* Use the label from the data attribute */
+  position: absolute;
+  bottom: -35px; /* Position the tooltip below the circle */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Prevent text from wrapping */
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Show Tooltip on Hover */
+.circle:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Pulse Animation for Active Step */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  .step {
-    display: flex;
-    align-items: center;
+  50% {
+    transform: scale(1.1);
   }
-  
-  .circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
+  100% {
+    transform: scale(1);
   }
-  
-  .circle.active {
-    background-color: #4CAF50; /* Active step color */
-    animation: pulse 0.5s infinite; /* Pulse animation */
-  }
-  
-  .line {
-    width: 50px;
-    height: 2px;
-    background-color: #ccc;
-  }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
+}

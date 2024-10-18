@@ -59,7 +59,7 @@ const EducationalBackground: React.FC = () => {
           }));
 
           setSubmitting(false); // Set submitting to false after storing data
-          navigate('/review-submission'); // Proceed to the next step
+          navigate('/background-info'); // Proceed to the next step
         }}
       >
         {({ values, isSubmitting }) => (

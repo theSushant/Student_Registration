@@ -20,7 +20,11 @@ const StepNavigator: React.FC<StepNavigatorProps> = ({ currentStep }) => {
     <div className="step-navigator">
       {steps.map((step, index) => (
         <div key={index} className="step">
-          <Link to={step.path} className={`circle ${currentStep === index + 1 ? 'active' : ''}`}>
+          <Link 
+            to={step.path} 
+            className={`circle ${currentStep === index + 1 ? 'active' : ''}`} 
+            data-label={step.label} /* Tooltip label */
+          >
             {index + 1}
           </Link>
           {index < steps.length - 1 && <div className="line" />}

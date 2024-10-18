@@ -45,7 +45,7 @@ const AcademicInfo: React.FC = () => {
     }));
 
     // Navigate to the next page
-    navigate('/review-submission'); 
+    navigate('/educational-background'); 
   };
 
   return (

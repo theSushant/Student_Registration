@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
 import '../styles/BackgroundInfo.css'; // Import CSS for styles
@@ -11,6 +11,12 @@ const validationSchema = Yup.object({
   visaRejection: Yup.string().required('Visa rejection status is required'),
   educationGap: Yup.string().required('Gap in Education is required'),
 });
+
+// Type for Form Values
+interface FormValues {
+  visaRejection: string;
+  educationGap: string;
+}
 
 const BackgroundInfo: React.FC = () => {
   const navigate = useNavigate(); // Navigation hook
@@ -30,7 +36,7 @@ const BackgroundInfo: React.FC = () => {
           educationGap: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
+        onSubmit={(values: FormValues) => {
           // Store background information in the context
           setFormData((prevData) => ({
             ...prevData, // Keep other form data intact
@@ -44,13 +50,13 @@ const BackgroundInfo: React.FC = () => {
           navigate('/document-upload');
         }}
       >
-        {({ handleChange, values, errors, touched }) => (
+        {({ handleChange, values }) => (
           <Form className="form-container">
             {/* Visa Rejection Status */}
             <div className="form-field">
-              <label>Visa Rejection Status<span className="required">*</span></label>
+              <label>Visa Rejection Status <span className="required">*</span></label>
               <div className="radio-group">
-                <label className="radio-label">
+                <label className={`radio-pill ${values.visaRejection === 'Yes' ? 'selected' : ''}`}>
                   <input 
                     type="radio" 
                     name="visaRejection" 
@@ -58,9 +64,10 @@ const BackgroundInfo: React.FC = () => {
                     className="radio-input bounce-animation" 
                     onChange={handleChange} 
                     checked={values.visaRejection === 'Yes'} 
-                  /> Yes
+                  />
+                  <span className="radio-label">Yes</span>
                 </label>
-                <label className="radio-label">
+                <label className={`radio-pill ${values.visaRejection === 'No' ? 'selected' : ''}`}>
                   <input 
                     type="radio" 
                     name="visaRejection" 
@@ -68,38 +75,36 @@ const BackgroundInfo: React.FC = () => {
                     className="radio-input bounce-animation" 
                     onChange={handleChange} 
                     checked={values.visaRejection === 'No'} 
-                  /> No
+                  />
+                  <span className="radio-label">No</span>
                 </label>
               </div>
-              {errors.visaRejection && touched.visaRejection && (
-                <div className="error-message">{errors.visaRejection}</div>
-              )}
-              <div className="tooltip">
-                <i className="tooltip-icon">?</i>
-                <span className="tooltip-text">Select "Yes" if your visa has ever been rejected.</span>
-              </div>
+              <ErrorMessage name="visaRejection" component="div" className="error-message" />
             </div>
 
             {/* Gap in Education */}
             <div className="form-field">
-              <label htmlFor="educationGap"><span className="required">*</span>Gap in Education</label>
-              <select 
-                name="educationGap" 
-                className="form-select" 
-                onChange={handleChange} 
+              <label htmlFor="educationGap">
+                Gap in Education <span className="required">*</span>
+              </label>
+              <Field
+                as="select"
+                name="educationGap"
+                className="form-select"
                 value={values.educationGap}
+                onChange={handleChange}
               >
                 <option value="" label="Select gap duration" />
                 <option value="None" label="None" />
                 <option value="Less than 1 year" label="Less than 1 year" />
                 <option value="1-2 years" label="1-2 years" />
                 <option value="More than 2 years" label="More than 2 years" />
-              </select>
-              {errors.educationGap && touched.educationGap && (
-                <div className="error-message">{errors.educationGap}</div>
-              )}
-              <i className="tooltip-icon">?</i>
-              <span className="tooltip-text">Select the gap period if applicable.</span>
+              </Field>
+              <ErrorMessage name="educationGap" component="div" className="error-message" />
+              <div className="tooltip-container">
+                <i className="tooltip-icon" aria-label="Education gap info">?</i>
+                <span className="tooltip-text">Select the gap period if applicable.</span>
+              </div>
             </div>
 
             {/* Navigation Buttons */}
