@@ -1,0 +1,166 @@
+/* Main container for the Address Information form */
+.address-info-container {
+  max-width: 700px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form on the page */
+  padding: 30px; /* Padding around the form */
+  border: 1px solid #ddd; /* Light border around the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background-color: #ffffff; /* White background for the form */
+}
+
+/* Heading for the form */
+.form-heading {
+  text-align: left; /* Center the heading */
+  font-size: 2.5rem; /* Main heading size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 15px; /* Space below the heading */
+  color: #4CAF50; /* Theme color */
+}
+
+/* Description under the heading */
+.form-description {
+  text-align: center; /* Center the description */
+  font-size: 1.1rem; /* Size of the description text */
+  margin-bottom: 25px; /* Space below the description */
+  color: #666; /* Slightly darker text color */
+}
+
+/* Accordion section */
+.accordion-section {
+  margin-bottom: 20px; /* Space between sections */
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #e7e7e7;
+}
+
+.accordion-toggle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.accordion-toggle.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  transition: max-height 0.3s ease-out;
+}
+
+/* Styling for the input fields and selects */
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 12px 15px; /* Padding inside the inputs */
+  font-size: 16px; /* Font size for inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Focus state for inputs and selects */
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #4CAF50; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+}
+
+.form-field{
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.form-field label{
+  margin-right: 20px;
+}
+
+
+/* Styling for required field indicator */
+.required {
+  color: red; /* Color for asterisk */
+}
+
+/* Navigation buttons */
+.button-container {
+  display: flex; /* Use flexbox for button layout */
+  justify-content: space-between; /* Space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+}
+
+/* Navigation buttons (Next, Previous) */
+.nav-button {
+  padding: 12px 20px; /* Padding for buttons */
+  font-size: 16px; /* Button text size */
+  font-weight: bold; /* Bold text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover */
+}
+
+.prev-button {
+  background-color: #f0f0f0; /* Light gray for Previous button */
+  color: #555; /* Darker text color */
+}
+
+.next-button {
+  background-color: #4CAF50; /* Green for Next button */
+  color: white; /* White text */
+}
+
+.nav-button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.prev-button:hover {
+  background-color: #e0e0e0; /* Darker gray on hover */
+}
+
+.next-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .address-info-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .form-heading {
+    font-size: 2rem; /* Smaller heading size on mobile */
+  }
+
+  .form-description {
+    font-size: 0.9rem; /* Smaller description text size */
+  }
+
+  .nav-button {
+    font-size: 14px; /* Smaller button text size */
+    padding: 10px 15px; /* Adjust padding for smaller buttons */
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 10px; /* Add space between buttons */
+  }
+}

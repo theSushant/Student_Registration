@@ -1,0 +1,134 @@
+/* Container for the entire Home page */
+.home-container {
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* Heading styling */
+  .home-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Overview text styling */
+  .overview {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+    animation: fadeIn 1.2s ease-in;
+  }
+  
+  /* Button styling */
+  .start-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  /* Button hover effect */
+  .start-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Steps Section Container */
+  .steps-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Individual step container with flexbox */
+  .home-step {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  
+    display: flex; /* Use flexbox for step alignment */
+    align-items: flex-start;
+  }
+  
+  /* Styling for the step number to match the button color */
+  .home-step strong {
+    color: #4CAF50; /* Match step number color with the button */
+    margin-right: 10px; /* Add margin for spacing instead of min-width */
+    font-weight: bold;
+  }
+  
+  /* Spacing between step number and description */
+  .step-description {
+    color: #333;
+    text-align: left;
+    flex: 1; /* Allow the description to take the remaining space */
+  }
+  
+  /* Hover effect for steps */
+  .home-step:hover {
+    transform: translateY(0) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #f1f1f1;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in animation */
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .home-text {
+      font-size: 1.5rem;
+    }
+  
+    .overview {
+      font-size: 1rem;
+    }
+  
+    .start-button {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  
+    .home-step {
+      padding: 12px 15px;
+      flex-direction: column; /* Stack step number and description vertically on mobile */
+    }
+  
+    .home-step strong {
+      margin-right: 0; /* Remove extra spacing for mobile */
+    }
+  }
+  

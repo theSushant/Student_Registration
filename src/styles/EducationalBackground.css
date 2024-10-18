@@ -1,0 +1,121 @@
+/* Main container */
+.educational-background-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form heading */
+  .form-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  /* Form description */
+  .form-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #666;
+  }
+  
+  /* Form fields */
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  /* Form control */
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Add/Remove buttons */
+  .add-button, .remove-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .add-button:hover, .remove-button:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+  }
+  
+  .remove-button {
+    background-color: #f44336;
+  }
+  
+  .remove-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Button container */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Navigation buttons */
+  .nav-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .prev-button {
+    background-color: #f0f0f0;
+    color: #555;
+  }
+  
+  .next-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .prev-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .next-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Smooth animation for slide-down effect */
+  .animate-slide-down {
+    animation: slide-down 0.5s ease-out;
+  }
+  
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

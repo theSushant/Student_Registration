@@ -1,0 +1,16 @@
+/* src/components/Layout.css */
+
+.layout {
+    text-align: center; /* Center-aligns text and elements */
+    padding: 20px; /* Padding around the layout */
+  }
+  
+  .logo {
+    width: 150px; /* Adjust logo size */
+    margin-bottom: 20px; /* Space below the logo */
+  }
+  
+  .content {
+    margin-top: 20px; /* Space above the content */
+  }
+  

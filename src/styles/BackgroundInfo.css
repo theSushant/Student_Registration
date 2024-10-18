@@ -1,0 +1,132 @@
+/* Main container */
+.background-info-container {
+  max-width: 800px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form on the page */
+  padding: 30px; /* Padding around the form */
+  border: 1px solid #ddd; /* Light border around the form */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fff; /* White background for the form */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form heading */
+.form-heading {
+  text-align: center; /* Center the heading */
+  font-size: 2.5rem; /* Main heading size */
+  color: #4CAF50; /* Theme color */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Form description */
+.form-description {
+  text-align: center; /* Center the description */
+  font-size: 1.1rem; /* Size of the description text */
+  margin-bottom: 25px; /* Space below the description */
+  color: #666; /* Slightly darker text color */
+}
+
+/* Form fields */
+.form-field {
+  margin-bottom: 5px; /* Space between form fields */
+}
+
+/* Radio group styling */
+.radio-group {
+  display: flex; /* Use flex layout */
+  gap: 15px; /* Space between radio buttons */
+}
+
+
+/* Bounce animation for radio buttons */
+.bounce-animation {
+  transition: transform 0.2s ease-in-out; /* Smooth scaling */
+}
+
+.bounce-animation:checked {
+  transform: scale(1.1); /* Scale up on check */
+}
+
+/* Tooltips */
+.tooltip-container {
+  position: relative; /* Position relative for tooltip */
+}
+
+.tooltip-icon {
+  background-color: #4CAF50; /* Tooltip icon color */
+  color: white; /* Tooltip icon text color */
+  padding: 5px; /* Padding around icon */
+  border-radius: 50%; /* Circular shape */
+  font-size: 12px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 10px; /* Space between icon and label */
+}
+
+.tooltip-text {
+  visibility: hidden; /* Hide tooltip by default */
+  width: 180px; /* Width of tooltip */
+  background-color: #333; /* Dark background for tooltip */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  padding: 5px; /* Padding inside tooltip */
+  border-radius: 5px; /* Rounded corners */
+  position: absolute; /* Position absolute */
+  z-index: 1; /* Stack on top */
+  bottom: 100%; /* Show above the icon */
+  left: 50%; /* Center horizontally */
+  margin-left: -90px; /* Center alignment */
+  opacity: 0; /* Hide initially */
+  transition: opacity 0.3s; /* Smooth transition */
+}
+
+.tooltip-icon:hover + .tooltip-text,
+.tooltip-text:hover {
+  visibility: visible; /* Show on hover */
+  opacity: 1; /* Fade in */
+}
+
+/* Button container */
+.button-container {
+  display: flex; /* Flex layout for buttons */
+  justify-content: space-between; /* Space between buttons */
+  margin-top: 20px; /* Space above buttons */
+}
+
+/* Navigation buttons */
+.nav-button {
+  padding: 12px 20px; /* Padding for buttons */
+  font-size: 16px; /* Button text size */
+  font-weight: bold; /* Bold text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover */
+}
+
+.prev-button {
+  background-color: #f0f0f0; /* Light gray for Previous button */
+  color: #555; /* Darker text color */
+}
+
+.next-button {
+  background-color: #4CAF50; /* Green for Next button */
+  color: white; /* White text */
+}
+
+.nav-button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.prev-button:hover {
+  background-color: #e0e0e0; /* Darker gray on hover */
+}
+
+.next-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Error messages */
+.error-message {
+  color: red; /* Red for error messages */
+  margin-top: 5px; /* Space above error messages */
+  font-size: 0.9rem; /* Smaller font size */
+}

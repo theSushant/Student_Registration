@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { FormProvider } from './context/FormContext';
+import Home from './pages/Home';
+import PersonalInfo from './pages/PersonalInfo';
+import AddressInfo from './pages/AddressInfo';
+import AcademicInfo from './pages/AcademicInfo';
+import EducationalBackground from './pages/EducationalBackground';
+import BackgroundInfo from './pages/BackgroundInfo';
+import DocumentUpload from './pages/DocumentUpload';
+import ReviewSubmission from './pages/ReviewSubmission';
+import Layout from './components/Layout';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormProvider>
+      <Layout> {/* Wrap all routes with the Layout component */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/personal-info" element={<PersonalInfo />} />
+          <Route path="/address-info" element={<AddressInfo />} />
+          <Route path="/academic-info" element={<AcademicInfo />} />
+          <Route path="/educational-background" element={<EducationalBackground />} />
+          <Route path="/background-info" element={<BackgroundInfo />} />
+          <Route path="/document-upload" element={<DocumentUpload />} />
+          <Route path="/review-submission" element={<ReviewSubmission />} />
+        </Routes>
+      </Layout>
+    </FormProvider>
   );
-}
+};
 
 export default App;
