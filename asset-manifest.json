@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.50dd6da0.css",
+    "main.js": "/static/js/main.583b3064.js",
+    "static/media/Daltin_Logo_TM.png": "/static/media/Daltin_Logo_TM.a91340c9279ab4b31d88.png",
+    "index.html": "/index.html",
+    "main.50dd6da0.css.map": "/static/css/main.50dd6da0.css.map",
+    "main.583b3064.js.map": "/static/js/main.583b3064.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50dd6da0.css",
+    "static/js/main.583b3064.js"
+  ]
+}
