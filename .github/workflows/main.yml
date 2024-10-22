@@ -1,0 +1,26 @@
+name: Build and Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - 'feature'  # Trigger only on the 'feature' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  # Checkout the code from the repository
+
+    - name: Install dependencies
+      run: npm install  # Install project dependencies
+
+    - name: Build the React app
+      run: npm run build  # Build the app (output in build/ folder)
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token for authentication
+        publish_dir: ./build  # Deploy the content of the build folder
