@@ -6,7 +6,7 @@ import StepNavigator from '../components/StepNavigator';
 import '../styles/AcademicInfo.css'; // Import the CSS file for styles
 import { useForm } from '../context/FormContext'; // Import useForm to access the context
 
-// Validation schema
+// Validation schemas
 const validationSchema = Yup.object({
   interestedCountry: Yup.string().required('Interested Country is required'),
   englishTest: Yup.string().required('English Proficiency Test is required'),
