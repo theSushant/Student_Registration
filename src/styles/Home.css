@@ -1,4 +1,3 @@
-/* Container for the entire Home page */
 .home-container {
     text-align: center;
     padding: 0 20px;
@@ -64,25 +63,22 @@
     transform: translateY(20px);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   
-    display: flex; /* Use flexbox for steps alignment */
+    display: flex; 
     align-items: flex-start;
   }
   
-  /* Styling for the step number to match the button color */
   .home-step strong {
-    color: #25529E; /* Match step number color with the button */
-    margin-right: 10px; /* Add margin for spacing instead of min-width */
+    color: #25529E; 
+    margin-right: 10px; 
     font-weight: bold;
   }
   
-  /* Spacing between step number and description */
   .step-description {
     color: #333;
     text-align: left;
-    flex: 1; /* Allow the description to take the remaining space */
+    flex: 1; 
   }
   
-  /* Hover effect for steps */
   .home-step:hover {
     transform: translateY(0) scale(1.03);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -124,11 +120,11 @@
   
     .home-step {
       padding: 12px 15px;
-      flex-direction: column; /* Stack step number and description vertically on mobile */
+      flex-direction: column; 
     }
   
     .home-step strong {
-      margin-right: 0; /* Remove extra spacing for mobile */
+      margin-right: 0; 
     }
   }
   

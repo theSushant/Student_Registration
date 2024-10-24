@@ -10,6 +10,7 @@ import BackgroundInfo from './pages/BackgroundInfo';
 import DocumentUpload from './pages/DocumentUpload';
 import ReviewSubmission from './pages/ReviewSubmission';
 import Layout from './components/Layout';
+import FeedbackPage from './pages/FeedbackPage';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/background-info" element={<BackgroundInfo />} />
           <Route path="/document-upload" element={<DocumentUpload />} />
           <Route path="/review-submission" element={<ReviewSubmission />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
       </Layout>
     </FormProvider>

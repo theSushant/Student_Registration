@@ -1,0 +1,87 @@
+.confirm-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; 
+  }
+  
+  .confirm-dialog-box {
+    background-color: #fff;
+    padding: 30px 40px; 
+    border-radius: 12px; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    max-width: 90%; 
+    width: 400px; 
+    transition: transform 0.3s ease; 
+  }
+  
+  .confirm-dialog-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333; 
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; 
+  }
+  
+  .yes-button, .no-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 45%; 
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .yes-button {
+    background-color: #28a745; 
+    color: white;
+  }
+  
+  .yes-button:hover {
+    background-color: #218838;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5); 
+  }
+  
+  .no-button {
+    background-color: #dc3545; 
+    color: white;
+  }
+  
+  .no-button:hover {
+    background-color: #c82333;
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.5);
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 480px) {
+    .confirm-dialog-box {
+      padding: 20px;
+      width: 100%; 
+    }
+  
+    .yes-button, .no-button {
+      font-size: 14px; 
+      padding: 10px 20px;
+      width: 100%; 
+    }
+  
+    .dialog-buttons {
+      flex-direction: column; 
+      gap: 10px; 
+    }
+  }
+  

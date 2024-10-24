@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
-import '../styles/EducationalBackground.css'; // Import the CSS file for styles
-import { useForm } from '../context/FormContext'; // Import useForm to store the data
+import '../styles/EducationalBackground.css';
+import { useForm } from '../context/FormContext';
 
 // Validation schema
 const validationSchema = Yup.object({
@@ -23,8 +23,8 @@ const validationSchema = Yup.object({
 });
 
 const EducationalBackground: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
-  const { formData, setFormData } = useForm(); // Use FormContext to store and retrieve data
+  const navigate = useNavigate();
+  const { formData, setFormData } = useForm();
 
   // Initialize qualifications from context if present
   const initialQualifications = formData.educationalBackground || [{
@@ -37,7 +37,7 @@ const EducationalBackground: React.FC = () => {
 
   return (
     <div className="educational-background-container">
-      <StepNavigator currentStep={4} /> {/* Step Navigator */}
+      <StepNavigator currentStep={4} />
       <h2 className="form-heading">Educational Background</h2>
       <p className="form-description">
         Please provide your previous education details. You can add multiple qualifications.
@@ -51,18 +51,18 @@ const EducationalBackground: React.FC = () => {
         onSubmit={(values, { setSubmitting }) => {
           // Store all qualifications in the context
           setFormData((prevData) => ({
-            ...prevData, // Spread previous form data to keep other parts intact
+            ...prevData,
             educationalBackground: values.qualifications.map(qualification => ({
               qualification: qualification.qualification,
               institution: qualification.institution,
-              percentage: Number(qualification.percentage), // Ensure percentage is a number
+              percentage: Number(qualification.percentage),
               passingYear: qualification.passingYear,
               country: qualification.country,
             })),
           }));
 
-          setSubmitting(false); // Set submitting to false after storing data
-          navigate('/background-info'); // Proceed to the next step
+          setSubmitting(false);
+          navigate('/background-info');
         }}
       >
         {({ values, isSubmitting }) => (
@@ -112,7 +112,7 @@ const EducationalBackground: React.FC = () => {
                         <label htmlFor={`qualifications.${index}.passingYear`}><span className="required">*</span>Passing Year</label>
                         <Field
                           name={`qualifications.${index}.passingYear`}
-                          type="text"
+                          type="date" // Use date type to enable date picker
                           className="form-control"
                         />
                         <ErrorMessage name={`qualifications.${index}.passingYear`} component="div" className="error-message" />
@@ -120,12 +120,17 @@ const EducationalBackground: React.FC = () => {
 
                       {/* Country */}
                       <div className="form-field">
-                        <label htmlFor={`qualifications.${index}.country`}><span className="required">*</span>Country</label>
-                        <Field
-                          name={`qualifications.${index}.country`}
-                          type="text"
-                          className="form-control"
-                        />
+                        <label htmlFor={`qualifications.${index}.country`}>
+                          <span className="required">*</span>Country
+                        </label>
+                        <Field as="select" name={`qualifications.${index}.country`} className="form-select" required>
+                          <option value="" label="Select country" />
+                          <option value="India" label="India" />
+                          <option value="USA" label="USA" />
+                          <option value="Canada" label="Canada" />
+                          <option value="UK" label="UK" />
+                          <option value="Australia" label="Australia" />
+                        </Field>
                         <ErrorMessage name={`qualifications.${index}.country`} component="div" className="error-message" />
                       </div>
 

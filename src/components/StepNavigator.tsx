@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/StepNavigator.css'; // Importing CSS for styles
+import '../styles/StepNavigator.css'; 
 
 interface StepNavigatorProps {
-  currentStep: number; // Current step number (1-indexed)
+  currentStep: number; 
 }
 
 const StepNavigator: React.FC<StepNavigatorProps> = ({ currentStep }) => {

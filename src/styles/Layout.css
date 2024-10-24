@@ -1,13 +1,11 @@
-/* src/components/Layout.css */
-
 .layout {
-    text-align: center; /* Center-aligns text and elements */
-    padding: 20px; /* Padding around the layout */
+    text-align: center; 
+    padding: 20px; 
   }
   
   .logo {
-    width: 150px; /* Adjust logo size */
-    margin-bottom: 20px; /* Space below the logo */
+    width: 150px; 
+    margin-bottom: 20px; 
   }
   
 

@@ -1,34 +1,33 @@
-/* Main container for the Address Information form */
 .address-info-container {
-  max-width: 700px; /* Limit the width of the form */
-  margin: 0 auto; /* Center the form on the page */
-  padding: 30px; /* Padding around the form */
-  border: 1px solid #ddd; /* Light border around the form */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  background-color: #ffffff; /* White background for the form */
+  max-width: 700px; 
+  margin: 0 auto; 
+  padding: 30px; 
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  background-color: #ffffff; 
 }
 
 /* Heading for the form */
 .form-heading {
-  text-align: left; /* Center the heading */
-  font-size: 2.5rem; /* Main heading size */
-  font-weight: bold; /* Bold text */
-  margin-bottom: 15px; /* Space below the heading */
-  color: #25529E; /* Theme color */
+  text-align: left; 
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  margin-bottom: 15px; 
+  color: #25529E; 
 }
 
 /* Description under the heading */
 .form-description {
-  text-align: center; /* Center the description */
-  font-size: 1.1rem; /* Size of the description text */
-  margin-bottom: 25px; /* Space below the description */
-  color: #666; /* Slightly darker text color */
+  text-align: center; 
+  font-size: 1.1rem; 
+  margin-bottom: 25px; 
+  color: #666; 
 }
 
 /* Accordion section */
 .accordion-section {
-  margin-bottom: 20px; /* Space between sections */
+  margin-bottom: 20px; 
 }
 
 .accordion-header {
@@ -70,19 +69,19 @@
 .form-field input,
 .form-field select {
   width: 100%;
-  padding: 12px 15px; /* Padding inside the inputs */
-  font-size: 16px; /* Font size for inputs */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for focus */
-  outline: none; /* Remove default outline */
+  padding: 12px 15px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  transition: border-color 0.3s, box-shadow 0.3s; 
+  outline: none; 
 }
 
 /* Focus state for inputs and selects */
 .form-field input:focus,
 .form-field select:focus {
-  border-color: #25529E; /* Change border color on focus */
-  box-shadow: 0 0 5px rgb(37,82,158, 0.5); /* Green shadow on focus */
+  border-color: #25529E; 
+  box-shadow: 0 0 5px rgb(37,82,158, 0.5); 
 }
 
 
@@ -94,70 +93,70 @@
 
 /* Styling for required field indicator */
 .required {
-  color: red; /* Color for asterisk */
+  color: red; 
 }
 
 /* Navigation buttons */
 .button-container {
-  display: flex; /* Use flexbox for button layout */
-  justify-content: space-between; /* Space between buttons */
-  margin-top: 20px; /* Space above the buttons */
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 20px; 
 }
 
 /* Navigation buttons (Next, Previous) */
 .nav-button {
-  padding: 12px 20px; /* Padding for buttons */
-  font-size: 16px; /* Button text size */
-  font-weight: bold; /* Bold text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover */
+  padding: 12px 20px; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
 }
 
 .prev-button {
-  background-color: #f0f0f0; /* Light gray for Previous button */
-  color: #555; /* Darker text color */
+  background-color: #f0f0f0; 
+  color: #555;
 }
 
 .next-button {
-  background-color: #25529E; /* Green for Next button */
-  color: white; /* White text */
+  background-color: #25529E; 
+  color: white; 
 }
 
 .nav-button:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05); 
 }
 
 .prev-button:hover {
-  background-color: #e0e0e0; /* Darker gray on hover */
+  background-color: #e0e0e0; 
 }
 
 .next-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; 
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .address-info-container {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 20px; 
   }
 
   .form-heading {
-    font-size: 2rem; /* Smaller heading size on mobile */
+    font-size: 2rem; 
   }
 
   .form-description {
-    font-size: 0.9rem; /* Smaller description text size */
+    font-size: 0.9rem; 
   }
 
   .nav-button {
-    font-size: 14px; /* Smaller button text size */
-    padding: 10px 15px; /* Adjust padding for smaller buttons */
+    font-size: 14px;
+    padding: 10px 15px; 
   }
 
   .button-container {
-    flex-direction: column; /* Stack buttons vertically on mobile */
-    gap: 10px; /* Add space between buttons */
+    flex-direction: column; 
+    gap: 10px; 
   }
 }

@@ -1,0 +1,24 @@
+.feedback-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .star-rating {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  
+  .star {
+    font-size: 3rem;
+    color: lightgray;
+    cursor: pointer;
+  }
+  
+  .star.selected {
+    color: gold; 
+  }
+  
+  .star:hover {
+    color: gold; 
+  }
+  

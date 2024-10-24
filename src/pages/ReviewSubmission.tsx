@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/ReviewSubmission.css'; // Import CSS for styles
-import { useForm } from '../context/FormContext'; // Import useForm to access form data
+import '../styles/ReviewSubmission.css'; 
+import { useForm } from '../context/FormContext'; 
+import ConfirmDialog from './ConfirmDialog';
 
 const ReviewSubmission: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
-  const { formData } = useForm(); // Get the form data from context
+  const navigate = useNavigate(); 
+  const { formData } = useForm(); 
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
   const handleSubmit = () => {
-    const confirmed = window.confirm('Are you sure you want to submit your application?');
-    if (confirmed) {
-      console.log('Application submitted successfully!', formData);
-      // Proceed to the next step or submit logic here
-    }
+    setShowConfirmDialog(true);
+  };
+
+  const closeDialog = () => {
+    setShowConfirmDialog(false);
   };
 
   return (
@@ -138,6 +140,13 @@ const ReviewSubmission: React.FC = () => {
           Submit
         </button>
       </div>
+      {/* Custom Confirmation Dialog */}
+      {showConfirmDialog && (
+        <ConfirmDialog
+          message="Are you sure you want to submit your application?"
+          closeDialog={closeDialog} 
+        />
+      )}
     </div>
   );
 };

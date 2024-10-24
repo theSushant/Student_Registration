@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
-import '../styles/AcademicInfo.css'; // Import the CSS file for styles
-import { useForm } from '../context/FormContext'; // Import useForm to access the context
+import '../styles/AcademicInfo.css'; 
+import { useForm } from '../context/FormContext'; 
 
 // Validation schemas
 const validationSchema = Yup.object({
   interestedCountry: Yup.string().required('Interested Country is required'),
   englishTest: Yup.string().required('English Proficiency Test is required'),
-  testScore: Yup.string().nullable(), // No conditional validation
-  educationBoard: Yup.string().nullable(), // No conditional validation
+  testScore: Yup.string().nullable(), 
+  educationBoard: Yup.string().nullable(), 
 });
 
 const AcademicInfo: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
-  const { formData, setFormData } = useForm(); // Use FormContext to store data
+  const navigate = useNavigate(); 
+  const { formData, setFormData } = useForm(); // FormContext to store data
 
   const [showTestScore, setShowTestScore] = useState(false);
   const [showEducationBoard, setShowEducationBoard] = useState(false);
@@ -35,8 +35,8 @@ const AcademicInfo: React.FC = () => {
   const handleSubmit = (values: any) => {
     // Store the submitted academic data in the context
     setFormData((prevData) => ({
-      ...prevData, // Keep existing data intact
-      academicInfo: { // Add academic information
+      ...prevData, 
+      academicInfo: { 
         interestedCountry: values.interestedCountry,
         englishTest: values.englishTest,
         testScore: values.testScore,
@@ -50,7 +50,7 @@ const AcademicInfo: React.FC = () => {
 
   return (
     <div className="academic-info-container">
-      <StepNavigator currentStep={3} /> {/* Step Navigator */}
+      <StepNavigator currentStep={3} /> 
       <h2 className="form-heading">Academic Information</h2>
       <p className="form-description">Please provide your academic preferences and proficiency details.</p>
 
@@ -72,6 +72,7 @@ const AcademicInfo: React.FC = () => {
               <label htmlFor="interestedCountry"><span className="required">*</span>Interested Country</label>
               <Field as="select" name="interestedCountry" className="form-select" required>
                 <option value="" label="Select country" />
+                <option value="India" label="India" />
                 <option value="USA" label="USA" />
                 <option value="Canada" label="Canada" />
                 <option value="UK" label="UK" />

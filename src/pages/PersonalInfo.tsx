@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import StepNavigator from '../components/StepNavigator'; // Importing StepNavigator
-import '../styles/PersonalInfo.css'; // Import the CSS file for styles
-import { useForm } from '../context/FormContext'; // Import the FormContext to store data
+import StepNavigator from '../components/StepNavigator'; 
+import '../styles/PersonalInfo.css'; 
+import { useForm } from '../context/FormContext'; 
 
 // Validation schema for form inputs
 const validationSchema = Yup.object({
@@ -21,28 +21,26 @@ const validationSchema = Yup.object({
 });
 
 const PersonalInfo: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
-  const { formData, setFormData } = useForm(); // Access form data and setFormData from the context
+  const navigate = useNavigate(); 
+  const { formData, setFormData } = useForm(); 
 
   const handleSubmit = (values: any) => {
     // Store the submitted data in the context
-    console.log('Form data:', values); // Log values to check
+    console.log('Form data:', values);
     setFormData((prevData) => ({
-      ...prevData, // Keep existing data intact
-      personalInfo: values, // Add personal information
+      ...prevData,
+      personalInfo: values, 
     }));
 
-    // Navigate to the next step (address information)
     navigate('/address-info');
   };
 
   useEffect(() => {
-    // Make sure to set initialValues to stored form data if available
   }, [formData]);
 
   return (
     <div className="personal-info-container">
-      <StepNavigator currentStep={1} /> {/* Step Navigator Component */}
+      <StepNavigator currentStep={1} /> 
       <h2 className="form-heading">Personal Information</h2>
       <p className="form-description">
         Please fill out your personal information to proceed with the registration process.
@@ -62,7 +60,7 @@ const PersonalInfo: React.FC = () => {
           dateOfBirth: formData.personalInfo?.dateOfBirth || null,
         }}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit} // Save form data to context and navigate to the next page
+        onSubmit={handleSubmit} 
       >
         {({ isSubmitting }) => (
           <Form className="personal-form-container">
@@ -148,7 +146,7 @@ const PersonalInfo: React.FC = () => {
               <button type="button" className="nav-button prev-button" onClick={() => navigate('/')}>Previous</button>
               <button type="submit" className="nav-button next-button" disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Next'}
-              </button> {/* Submit form and move to the next step */}
+              </button> 
             </div>
           </Form>
         )}

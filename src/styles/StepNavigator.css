@@ -8,7 +8,7 @@
 .step {
   display: flex;
   align-items: center;
-  position: relative; /* Ensure positioning context for the tooltip */
+  position: relative; 
 }
 
 .circle {
@@ -24,38 +24,38 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  position: relative; /* Position for the tooltip */
-  user-select: none; /* Prevent text selection */
+  position: relative; 
+  user-select: none; 
 }
 
 .circle.active {
-  background-color: #25529E; /* Active step color */
-  animation: pulse 0.5s infinite; /* Pulse animation */
+  background-color: #25529E; 
+  animation: pulse 0.5s infinite; 
 }
 
 .line {
   width: 50px;
   height: 2px;
   background-color: #ccc;
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease; 
 }
 
 /* Custom Tooltip Styling */
 .tooltip {
-  visibility: hidden; /* Hide by default */
+  visibility: hidden; 
   width: max-content;
-  background-color: #25529E; /* Tooltip background color */
+  background-color: #25529E; 
   color: #fff;
   text-align: center;
   border-radius: 5px;
   padding: 5px;
   position: absolute;
-  top: 45px; /* Position tooltip BELOW the circle */
+  top: 45px; 
   left: 50%;
-  transform: translateX(-50%); /* Center tooltip horizontally */
-  opacity: 0; /* Fully transparent initially */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  z-index: 1; /* Ensure tooltip stays above the circle */
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  z-index: 1; 
 }
 
 /* Show tooltip on hover */
@@ -64,12 +64,10 @@
   opacity: 1;
 }
 
-/* Ensure the line remains visible and unaffected */
 .circle:hover + .line {
-  visibility: visible; /* Line stays visible */
+  visibility: visible; 
 }
 
-/* Pulse animation for active circle */
 @keyframes pulse {
   0% {
     transform: scale(1);

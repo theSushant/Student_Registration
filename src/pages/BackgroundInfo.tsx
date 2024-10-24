@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
-import '../styles/BackgroundInfo.css'; // Import CSS for styles
-import { useForm } from '../context/FormContext'; // Import useForm to store the data
+import '../styles/BackgroundInfo.css'; 
+import { useForm } from '../context/FormContext'; 
 
 // Validation schema
 const validationSchema = Yup.object({
@@ -18,7 +18,7 @@ interface FormValues {
 }
 
 const BackgroundInfo: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
+  const navigate = useNavigate();
   const { formData, setFormData } = useForm(); // Use FormContext to store and retrieve data
 
   // Initialize form values from context if present
@@ -29,7 +29,7 @@ const BackgroundInfo: React.FC = () => {
 
   return (
     <div className="background-info-container">
-      <StepNavigator currentStep={5} /> {/* Step Navigator */}
+      <StepNavigator currentStep={5} /> 
       <h2 className="form-heading">Background Information</h2>
       <p className="form-description">
         Please provide your visa rejection status and gap in education details.
@@ -41,7 +41,7 @@ const BackgroundInfo: React.FC = () => {
         onSubmit={(values: FormValues) => {
           // Store background information in the context
           setFormData((prevData) => ({
-            ...prevData, // Keep other form data intact
+            ...prevData, 
             backgroundInfo: {
               visaRejection: values.visaRejection,
               educationGap: values.educationGap,

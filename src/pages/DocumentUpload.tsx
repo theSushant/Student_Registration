@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
-import '../styles/DocumentUpload.css'; // Import CSS for styles
+import '../styles/DocumentUpload.css'; 
 
 // Validation schema for document uploads
 const validationSchema = Yup.object({
@@ -15,22 +15,22 @@ const validationSchema = Yup.object({
           if (value && value instanceof File) {
             return ['application/pdf', 'image/jpeg', 'image/png'].includes(value.type);
           }
-          return false; // Return false if value is not a File
+          return false; 
         })
         .test('fileSize', 'File Size is too large', (value) => {
           if (value && value instanceof File) {
             return value.size <= 10485760; // 10MB limit
           }
-          return false; // Return false if value is not a File
+          return false; 
         }),
     })
   ).min(1, 'At least one document is required.'),
 });
 
 const DocumentUpload: React.FC = () => {
-  const navigate = useNavigate(); // Navigation hook
-  const [files, setFiles] = useState<any[]>([]); // State to manage files
-  const [progress, setProgress] = useState<number[]>([]); // State to manage upload progress
+  const navigate = useNavigate(); 
+  const [files, setFiles] = useState<any[]>([]);
+  const [progress, setProgress] = useState<number[]>([]); 
 
   const handleDrop = (acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
@@ -38,7 +38,7 @@ const DocumentUpload: React.FC = () => {
       setFiles((currentFiles) => [...currentFiles, { file, name: file.name }]);
       setProgress((currentProgress) => {
         const newProgress = [...currentProgress];
-        newProgress[newIndex] = 0; // Initialize progress for the new file
+        newProgress[newIndex] = 0; 
         return newProgress;
       });
 
@@ -49,11 +49,10 @@ const DocumentUpload: React.FC = () => {
           newProgress[newIndex] = Math.min(newProgress[newIndex] + 10, 100);
           return newProgress;
         });
-      }, 100); // Simulating progress every 100ms
-
+      }, 100); 
       setTimeout(() => {
         clearInterval(interval);
-      }, 1000); // Simulating upload completion after 1 second
+      }, 1000); 
     });
   };
 
@@ -61,19 +60,19 @@ const DocumentUpload: React.FC = () => {
     const file = event.currentTarget.files?.[0];
     if (file) {
       const updatedFiles = [...files];
-      updatedFiles[index] = { file, name: file.name }; // Update the specific index
+      updatedFiles[index] = { file, name: file.name }; 
       setFiles(updatedFiles);
     }
   };
 
   const triggerFileInputClick = (index: number) => {
     const input = document.querySelector(`input[name="documents.${index}.file"]`) as HTMLInputElement;
-    input?.click(); // Cast to HTMLInputElement
+    input?.click(); 
   };
 
   return (
     <div className="document-upload-container">
-      <StepNavigator currentStep={6} /> {/* Step Navigator */}
+      <StepNavigator currentStep={6} /> 
       <h2 className="form-heading">Document Upload</h2>
       <p className="form-description">
         Please upload the required documents for your application.
@@ -84,7 +83,7 @@ const DocumentUpload: React.FC = () => {
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log('Uploaded files:', values);
-          navigate('/review-submission'); // Proceed to the next step
+          navigate('/review-submission'); 
         }}
       >
         {({ setFieldValue, errors }) => (
@@ -114,7 +113,7 @@ const DocumentUpload: React.FC = () => {
                         />
                         <button
                           type="button"
-                          onClick={() => triggerFileInputClick(index)} // Use the function to trigger click
+                          onClick={() => triggerFileInputClick(index)} 
                           className="upload-button"
                         >
                           Choose File

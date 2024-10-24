@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Home.css'; // Importing CSS for styles
+import '../styles/Home.css'; 
 
 const Home: React.FC = () => {
-  // Define steps with numbers and descriptions
+  // Steps with numbers and descriptions
   const steps = [
     { number: 1, description: 'Personal Information: Enter your personal details including name and contact information.' },
     { number: 2, description: 'Address Information: Provide your current address and related details.' },
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         {steps.map((step) => (
           <div key={step.number} className="home-step fade-in">
             <strong>Step {step.number}:</strong>
-            <span className="step-description"> {step.description}</span> {/* Add space here */}
+            <span className="step-description"> {step.description}</span> 
           </div>
         ))}
       </div>

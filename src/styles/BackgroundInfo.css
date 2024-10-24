@@ -1,4 +1,3 @@
-/* Main container */
 .background-info-container {
   max-width: 700px;
   margin: 0 auto;
@@ -73,9 +72,9 @@
 
 /* Selected radio button */
 .radio-pill.selected {
-  background-color: #007bff; /* Blue background */
-  color: white; /* White text */
-  border-color: #007bff; /* Blue border */
+  background-color: #007bff; 
+  color: white; 
+  border-color: #007bff; 
 }
 
 /* Radio input (hidden) */
@@ -93,12 +92,12 @@
   background-color: #25529E;
   color: white;
   padding: 1px;
-  border-radius: 50%; /* Make it circular */
-  font-size: 10px; /* Adjust font size for better centering */
+  border-radius: 50%; 
+  font-size: 10px; 
   cursor: pointer;
   text-align: center;
-  width: 15px;  /* Set width */
-  height: 15px; /* Set height */
+  width: 15px;  
+  height: 15px; 
   display: flex;
   justify-content: center;
   align-items: center;

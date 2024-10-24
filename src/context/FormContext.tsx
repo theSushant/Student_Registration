@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-// Define the shape of the form data
+// Shape of the form data
 interface FormData {
   personalInfo?: {
     title: string,
@@ -13,7 +13,6 @@ interface FormData {
     maritalStatus: string,
     gender: string,
     dateOfBirth: string,
-    // Add additional fields if necessary
   };
   addressInfo?: {
     nativeCountry: string;
@@ -26,8 +25,8 @@ interface FormData {
   academicInfo?: {
     interestedCountry: string;
     englishTest: string;
-    testScore?: string; // This can be optional
-    educationBoard?: string; // This can be optional
+    testScore?: string; // Optional
+    educationBoard?: string; // Optional
   };
 
   educationalBackground?: Array<{ 
@@ -44,28 +43,27 @@ interface FormData {
   };
 
   documents?: Array<{
-    name: string; // The name of the document
-    file: string; // The file path or file name
+    name: string; 
+    file: string; 
   }>;
 }
 
-// Create a context for form data
+// Context for form data
 interface FormContextType {
   formData: FormData; // Current form data
   setFormData: React.Dispatch<React.SetStateAction<FormData>>; // Function to update the form data
 }
 
-// Create the FormContext
+// FormContext
 const FormContext = createContext<FormContextType | undefined>(undefined);
 
 // Context Provider component (FormProvider)
 export const FormProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize form data state
   const [formData, setFormData] = useState<FormData>({});
 
   return (
     <FormContext.Provider value={{ formData, setFormData }}>
-      {children} {/* Render children components within the provider */}
+      {children} 
     </FormContext.Provider>
   );
 };

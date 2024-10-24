@@ -4,7 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import StepNavigator from '../components/StepNavigator';
 import '../styles/AddressInfo.css';
-import { useForm } from '../context/FormContext'; // Import useForm to store the data
+import { useForm } from '../context/FormContext';
 
 // Validation schema
 const validationSchema = Yup.object({
@@ -30,13 +30,12 @@ const AddressInfo: React.FC = () => {
     // Store the submitted address and passport data
     setFormData((prevData) => ({
       ...prevData,
-      addressInfo: values, // Update the address and passport information
+      addressInfo: values,
     }));
     navigate('/academic-info'); // Navigate to the next step
   };
 
   useEffect(() => {
-    // Any side-effects or initial setup can go here if needed
   }, [formData]);
 
   return (
@@ -73,8 +72,11 @@ const AddressInfo: React.FC = () => {
                     <label htmlFor="nativeCountry"><span className="required">*</span>Native Country</label>
                     <Field as="select" name="nativeCountry" id="nativeCountry" required className="form-select">
                       <option value="" label="Select country" />
-                      <option value="Country1" label="Country1" />
-                      <option value="Country2" label="Country2" />
+                      <option value="India" label="India" />
+                      <option value="USA" label="USA" />
+                      <option value="Canada" label="Canada" />
+                      <option value="UK" label="UK" />
+                      <option value="Australia" label="Australia" />
                     </Field>
                   </div>
 
