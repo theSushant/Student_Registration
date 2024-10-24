@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../assets/images/Daltin_Logo_TM.png'; // Importing the logo
-import '../styles/Layout.css'; // Importing styles for the layout
+import logo from '../assets/images/Daltin_Logo_TM.png'; 
+import '../styles/Layout.css'; 
 import { Link } from 'react-router-dom';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {

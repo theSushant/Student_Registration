@@ -1,3 +1,5 @@
+/* StepNavigator Styles */
+
 .step-navigator {
   display: flex;
   justify-content: center;
@@ -12,8 +14,8 @@
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: #ccc;
   color: white;
@@ -34,8 +36,8 @@
 }
 
 .line {
-  width: 50px;
-  height: 2px;
+  width: 3rem;
+  height: 0.1rem;
   background-color: #ccc;
   transition: background-color 0.3s ease; /* Smooth transition */
 }
@@ -47,10 +49,10 @@
   background-color: #25529E; /* Tooltip background color */
   color: #fff;
   text-align: center;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
   position: absolute;
-  top: 45px; /* Position tooltip BELOW the circle */
+  top: 2.5rem; /* Position tooltip BELOW the circle */
   left: 50%;
   transform: translateX(-50%); /* Center tooltip horizontally */
   opacity: 0; /* Fully transparent initially */
@@ -79,5 +81,23 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Mobile Layout - Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .circle {
+    width: 2rem; /* Reduce circle size */
+    height: 2rem;
+    font-size: 0.8rem; /* Reduce font size */
+  }
+
+  .line {
+    width: 1.5rem; /* Reduce line length */
+  }
+
+  .tooltip {
+    top: 2rem; /* Adjust tooltip position */
+    font-size: 0.7rem; /* Reduce tooltip font size */
   }
 }
