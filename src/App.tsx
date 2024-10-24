@@ -15,7 +15,7 @@ import FeedbackPage from './pages/FeedbackPage';
 const App: React.FC = () => {
   return (
     <FormProvider>
-      <Layout> {/* Wrap all routes with the Layout component */}
+      <Layout> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/personal-info" element={<PersonalInfo />} />
