@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Student_Registration/static/css/main.5c1bfe8f.css",
+    "main.css": "/Student_Registration/static/css/main.02833543.css",
     "main.js": "/Student_Registration/static/js/main.294b0892.js",
     "static/media/Daltin_Logo_TM.png": "/Student_Registration/static/media/Daltin_Logo_TM.a91340c9279ab4b31d88.png",
     "index.html": "/Student_Registration/index.html",
-    "main.5c1bfe8f.css.map": "/Student_Registration/static/css/main.5c1bfe8f.css.map",
+    "main.02833543.css.map": "/Student_Registration/static/css/main.02833543.css.map",
     "main.294b0892.js.map": "/Student_Registration/static/js/main.294b0892.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c1bfe8f.css",
+    "static/css/main.02833543.css",
     "static/js/main.294b0892.js"
   ]
 }
